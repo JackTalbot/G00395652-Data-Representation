@@ -7,8 +7,9 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import Create from './create';
-import Read from './read';
+import Create from './components/create';
+import Read from './components/read';
+import Edit from './components/edit';
 
 function App() { {/* Main App Script */}
   return (
@@ -28,6 +29,7 @@ function App() { {/* Main App Script */}
         <Route path='/' element={<Content></Content>}></Route>
         <Route path='/read' element={<Read></Read>}></Route>
         <Route path='/create' element={<Create></Create>}></Route>
+        <Route path='/edit/:id' element={<Edit></Edit>}></Route>
       </Routes>
       {/* <Header></Header>
       <Content></Content>
