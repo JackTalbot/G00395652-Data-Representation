@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 
-function addShow(props) {
+function AddShow(props) {
     return (
         <div>
             <Card>
@@ -34,3 +34,4 @@ function addShow(props) {
         </div>
     )
 }
+export default AddShow;

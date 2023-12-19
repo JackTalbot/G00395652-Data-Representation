@@ -1,10 +1,11 @@
-import addShow from './showItem';
+import AddShow from "./showItem";
 
 function shows(props){
 
     return props.myshows.map(
         (show)=>{
-            return <ShowItem myShow={show} key={show._id} Reload={()=>{props.ReloadData();}}></ShowItem>
+            return <AddShow myShow={show} key={show._id} 
+            Reload={()=>{props.ReloadData();}}></AddShow>
         }
     );
 

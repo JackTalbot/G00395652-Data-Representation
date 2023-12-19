@@ -7,7 +7,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 import CreateShow from './components/createShow';
 import ReadShow from './components/displayShows';
-import editShow from './components/editShows';
+import Edit from './components/editShows';
 import HPage from './components/HPage';
 import shows from './components/shows';
 
@@ -28,9 +28,9 @@ function App() {
       </Navbar>
       <Routes>
         <Route path='/' element={<HPage></HPage>}></Route>
-        <Route path='/createShow' element={<createShow></createShow>}></Route>
-        <Route path='/displayShows' element={<displayShows></displayShows>}></Route>
-        <Route path='/editShow/:id' element={<editShow></editShow>}></Route>
+        <Route path='/createShow' element={<CreateShow></CreateShow>}></Route>
+        <Route path='/displayShows' element={<ReadShow></ReadShow>}></Route>
+        <Route path='/editShow/:id' element={<Edit></Edit>}></Route>
       </Routes>
     </div>
     </BrowserRouter>
