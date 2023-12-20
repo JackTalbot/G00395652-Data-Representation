@@ -7,7 +7,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 import CreateShow from './components/createShow';
 import ReadShow from './components/displayShows';
-import Edit from './components/editShows';
+import EditShow from './components/editShows';
 import HPage from './components/HPage';
 import shows from './components/shows';
 
@@ -22,7 +22,7 @@ function App() {
           <Nav className="me-auto">
           <Nav.Link href="/createShow">Add Show</Nav.Link>
           <Nav.Link href="/displayShows">Display Shows</Nav.Link>
-          <Nav.Link href="/editShow">Edit Shows</Nav.Link>
+          <Nav.Link href="/editShows">Edit Shows</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
@@ -30,7 +30,7 @@ function App() {
         <Route path='/' element={<HPage></HPage>}></Route>
         <Route path='/createShow' element={<CreateShow></CreateShow>}></Route>
         <Route path='/displayShows' element={<ReadShow></ReadShow>}></Route>
-        <Route path='/editShow/:id' element={<Edit></Edit>}></Route>
+        <Route path='/editShow/:id' element={<EditShow></EditShow>}></Route>
       </Routes>
     </div>
     </BrowserRouter>
