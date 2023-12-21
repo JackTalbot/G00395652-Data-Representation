@@ -29,7 +29,7 @@ function AddShow() {
         <div>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                    <label>Add Show Name: </label>
+                    <label>Add Show Title: </label>
                     <input type="text"
                         className="form-control"
                         value={Name}
@@ -37,7 +37,7 @@ function AddShow() {
                     />
                 </div>
                 <div className="form-group">
-                    <label>Add Show Art: </label>
+                    <label>Add Show Art, via an image link. Enter N/A if unavailable: </label>
                     <input type="text"
                         className="form-control"
                         value={Art}
@@ -45,7 +45,7 @@ function AddShow() {
                     />
                 </div>
                 <div className="form-group">
-                    <label>Add Show Year: </label>
+                    <label>Add Show Year of Release, Example 2021 </label>
                     <input type="text"
                         className="form-control"
                         value={Year}

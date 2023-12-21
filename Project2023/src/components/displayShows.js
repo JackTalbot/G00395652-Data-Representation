@@ -40,7 +40,7 @@ function ReadShows() {
     
         return (
             <div>
-                <h2>Hello from ReadShows Component!</h2>
+                <h2>Welcome, here is your list of added shows</h2>
             </div>
         );
     
