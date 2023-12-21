@@ -39,7 +39,7 @@ function main() {
       switch (_context.prev = _context.next) {
         case 0:
           _context.next = 2;
-          return regeneratorRuntime.awrap(mongoose.connect('mongodb://talbotjack86:JtCNwhxCubT54pLO@127.0.0.1:27017/test'));
+          return regeneratorRuntime.awrap(mongoose.connect('mongodb+srv://admin:admin@martinscluster.w5rtkz0.mongodb.net/DB14?retryWrites=true&w=majority'));
 
         case 2:
         case "end":

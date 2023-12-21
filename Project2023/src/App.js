@@ -9,9 +9,6 @@ import AddShow from './components/addShow';
 import ReadShow from './components/displayShows';
 import EditShow from './components/editShows';
 
-
-
-
 function App() {
   return (
     <BrowserRouter>
@@ -23,6 +20,7 @@ function App() {
           <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="/createShow">Add Show</Nav.Link>
           <Nav.Link href="/displayShows">Display Shows</Nav.Link>
+          <Nav.Link href="/editShow">Edit Shows</Nav.Link>
           </Nav>
         </Container>
       </Navbar>

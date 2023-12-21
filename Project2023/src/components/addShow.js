@@ -1,5 +1,5 @@
 import { useState } from "react";
-//import axios from "axios";
+import axios from "axios";
 
 function AddShow() {
 
@@ -19,6 +19,10 @@ function AddShow() {
             Art:Art,
             Year:Year
         };
+
+        axios.post('http://localhost:4000/api/shows',show)
+        .then()
+        .catch();
     }
 
     return (
