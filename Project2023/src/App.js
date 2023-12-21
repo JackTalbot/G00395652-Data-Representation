@@ -1,16 +1,15 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import HPage from './components/HPage';
-
+import HomePage from './components/home';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-
-import CreateShow from './components/createShow';
+import AddShow from './components/addShow';
 import ReadShow from './components/displayShows';
 import EditShow from './components/editShows';
-//import shows from './components/shows';
+
+
 
 
 function App() {
@@ -28,8 +27,8 @@ function App() {
         </Container>
       </Navbar>
       <Routes>
-        <Route path='/' element={<HPage></HPage>}></Route>
-        <Route path='/createShow' element={<CreateShow></CreateShow>}></Route>
+        <Route path='/' element={<HomePage></HomePage>}></Route>
+        <Route path='/createShow' element={<AddShow></AddShow>}></Route>
         <Route path='/displayShows' element={<ReadShow></ReadShow>}></Route>
         <Route path='/editShow/:id' element={<EditShow></EditShow>}></Route>
       </Routes>
