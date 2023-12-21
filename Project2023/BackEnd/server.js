@@ -28,45 +28,45 @@ const mongoose = require('mongoose');
 main().catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect('mongodb+srv://admin:admin@martinscluster.w5rtkz0.mongodb.net/DB14?retryWrites=true&w=majority');
+  await mongoose.connect('mongodb://talbotjack86:JtCNwhxCubT54pLO@127.0.0.1:27017/test');
 
   // use `await mongoose.connect('mongodb://talbotjack86:JtCNwhxCubT54pLO@127.0.0.1:27017/test');` if your database has auth enabled
 }
 
-const bookSchema = new mongoose.Schema({
+const showSchema = new mongoose.Schema({
   title:String,
   cover:String,
   author:String
 })
 
-const bookModel = mongoose.model('dfgdfgdfgdfg5r5645634fggh', bookSchema);
+const showModel = mongoose.model('dfgdfgdfgdfg5r5645634fggh', showSchema);
 
-app.delete('/api/book/:id',async (req, res)=>{
+app.delete('/api/show/:id',async (req, res)=>{
   console.log("Delete: "+req.params.id);
 
-  let book = await bookModel.findByIdAndDelete(req.params.id);
-  res.send(book);
+  let show = await showModel.findByIdAndDelete(req.params.id);
+  res.send(show);
 })
 
 
-app.put('/api/book/:id', async(req, res)=>{
+app.put('/api/show/:id', async(req, res)=>{
   console.log("Update: "+req.params.id);
 
-  let book = await bookModel.findByIdAndUpdate(req.params.id, req.body, {new:true});
-  res.send(book);
+  let show = await showModel.findByIdAndUpdate(req.params.id, req.body, {new:true});
+  res.send(show);
 })
 
 
-app.post('/api/book', (req,res)=>{
+app.post('/api/show', (req,res)=>{
     console.log(req.body);
 
-    bookModel.create({
+    showModel.create({
       title:req.body.title,
       cover:req.body.cover,
       author:req.body.author
     })
-    .then(()=>{ res.send("Book Created")})
-    .catch(()=>{ res.send("Book NOT Created")});
+    .then(()=>{ res.send("show Created")})
+    .catch(()=>{ res.send("show NOT Created")});
 
 })
 
@@ -74,17 +74,17 @@ app.post('/api/book', (req,res)=>{
 //   res.send('Hello World!')
 // })
 
-app.get('/api/books', async(req, res)=>{
+app.get('/api/shows', async(req, res)=>{
     
-  let books = await bookModel.find({});
-  res.json(books);
+  let shows = await showModel.find({});
+  res.json(shows);
 })
 
-app.get('/api/book/:identifier',async (req,res)=>{
+app.get('/api/show/:identifier',async (req,res)=>{
   console.log(req.params.identifier);
 
-  let book = await bookModel.findById(req.params.identifier);
-  res.send(book);
+  let show = await showModel.findById(req.params.identifier);
+  res.send(show);
 })
 
 //add at the bottom just over app.listen

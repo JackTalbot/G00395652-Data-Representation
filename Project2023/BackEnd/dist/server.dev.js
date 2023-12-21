@@ -39,7 +39,7 @@ function main() {
       switch (_context.prev = _context.next) {
         case 0:
           _context.next = 2;
-          return regeneratorRuntime.awrap(mongoose.connect('mongodb+srv://admin:admin@martinscluster.w5rtkz0.mongodb.net/DB14?retryWrites=true&w=majority'));
+          return regeneratorRuntime.awrap(mongoose.connect('mongodb://talbotjack86:JtCNwhxCubT54pLO@127.0.0.1:27017/test'));
 
         case 2:
         case "end":
@@ -49,25 +49,25 @@ function main() {
   });
 }
 
-var bookSchema = new mongoose.Schema({
+var showSchema = new mongoose.Schema({
   title: String,
   cover: String,
   author: String
 });
-var bookModel = mongoose.model('dfgdfgdfgdfg5r5645634fggh', bookSchema);
-app["delete"]('/api/book/:id', function _callee(req, res) {
-  var book;
+var showModel = mongoose.model('dfgdfgdfgdfg5r5645634fggh', showSchema);
+app["delete"]('/api/show/:id', function _callee(req, res) {
+  var show;
   return regeneratorRuntime.async(function _callee$(_context2) {
     while (1) {
       switch (_context2.prev = _context2.next) {
         case 0:
           console.log("Delete: " + req.params.id);
           _context2.next = 3;
-          return regeneratorRuntime.awrap(bookModel.findByIdAndDelete(req.params.id));
+          return regeneratorRuntime.awrap(showModel.findByIdAndDelete(req.params.id));
 
         case 3:
-          book = _context2.sent;
-          res.send(book);
+          show = _context2.sent;
+          res.send(show);
 
         case 5:
         case "end":
@@ -76,21 +76,21 @@ app["delete"]('/api/book/:id', function _callee(req, res) {
     }
   });
 });
-app.put('/api/book/:id', function _callee2(req, res) {
-  var book;
+app.put('/api/show/:id', function _callee2(req, res) {
+  var show;
   return regeneratorRuntime.async(function _callee2$(_context3) {
     while (1) {
       switch (_context3.prev = _context3.next) {
         case 0:
           console.log("Update: " + req.params.id);
           _context3.next = 3;
-          return regeneratorRuntime.awrap(bookModel.findByIdAndUpdate(req.params.id, req.body, {
+          return regeneratorRuntime.awrap(showModel.findByIdAndUpdate(req.params.id, req.body, {
             "new": true
           }));
 
         case 3:
-          book = _context3.sent;
-          res.send(book);
+          show = _context3.sent;
+          res.send(show);
 
         case 5:
         case "end":
@@ -99,33 +99,33 @@ app.put('/api/book/:id', function _callee2(req, res) {
     }
   });
 });
-app.post('/api/book', function (req, res) {
+app.post('/api/show', function (req, res) {
   console.log(req.body);
-  bookModel.create({
+  showModel.create({
     title: req.body.title,
     cover: req.body.cover,
     author: req.body.author
   }).then(function () {
-    res.send("Book Created");
+    res.send("show Created");
   })["catch"](function () {
-    res.send("Book NOT Created");
+    res.send("show NOT Created");
   });
 }); // app.get('/', (req, res) => {
 //   res.send('Hello World!')
 // })
 
-app.get('/api/books', function _callee3(req, res) {
-  var books;
+app.get('/api/shows', function _callee3(req, res) {
+  var shows;
   return regeneratorRuntime.async(function _callee3$(_context4) {
     while (1) {
       switch (_context4.prev = _context4.next) {
         case 0:
           _context4.next = 2;
-          return regeneratorRuntime.awrap(bookModel.find({}));
+          return regeneratorRuntime.awrap(showModel.find({}));
 
         case 2:
-          books = _context4.sent;
-          res.json(books);
+          shows = _context4.sent;
+          res.json(shows);
 
         case 4:
         case "end":
@@ -134,19 +134,19 @@ app.get('/api/books', function _callee3(req, res) {
     }
   });
 });
-app.get('/api/book/:identifier', function _callee4(req, res) {
-  var book;
+app.get('/api/show/:identifier', function _callee4(req, res) {
+  var show;
   return regeneratorRuntime.async(function _callee4$(_context5) {
     while (1) {
       switch (_context5.prev = _context5.next) {
         case 0:
           console.log(req.params.identifier);
           _context5.next = 3;
-          return regeneratorRuntime.awrap(bookModel.findById(req.params.identifier));
+          return regeneratorRuntime.awrap(showModel.findById(req.params.identifier));
 
         case 3:
-          book = _context5.sent;
-          res.send(book);
+          show = _context5.sent;
+          res.send(show);
 
         case 5:
         case "end":
