@@ -9,9 +9,11 @@ function ShowItem(props) {
         <div>
             <Card>
                 <Card.Header>
+                    {/* Adds Show Title */}
                     {props.myShow.title}
                 </Card.Header>
                 <Card.Body>
+                    {/* Displays Show Poster if available */}
                     <blockquote className="blockquote mb-0">
                         <img src={props.myShow.poster}></img>
                         <footer>
@@ -19,6 +21,7 @@ function ShowItem(props) {
                         </footer>
                     </blockquote>
                 </Card.Body>
+                {/* adds edit button */}
                 <Link to={'/edit/'+props.myShow._id} className='btn btn-primary'>Edit</Link>
             </Card>
         </div>
