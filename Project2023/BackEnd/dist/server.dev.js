@@ -39,7 +39,7 @@ function main() {
       switch (_context.prev = _context.next) {
         case 0:
           _context.next = 2;
-          return regeneratorRuntime.awrap(mongoose.connect('mongodb+srv://admin:admin@martinscluster.w5rtkz0.mongodb.net/DB14?retryWrites=true&w=majority'));
+          return regeneratorRuntime.awrap(mongoose.connect('mongodb+srv://jacktalbot:oQNEiYub1@cluster0.eojnzjj.mongodb.net/?retryWrites=true&w=majority'));
 
         case 2:
         case "end":
@@ -50,9 +50,9 @@ function main() {
 }
 
 var showSchema = new mongoose.Schema({
-  title: String,
-  cover: String,
-  author: String
+  Name: String,
+  Art: String,
+  Year: String
 });
 var showModel = mongoose.model('dfgdfgdfgdfg5r5645634fggh', showSchema);
 app["delete"]('/api/show/:id', function _callee(req, res) {
@@ -102,9 +102,9 @@ app.put('/api/show/:id', function _callee2(req, res) {
 app.post('/api/show', function (req, res) {
   console.log(req.body);
   showModel.create({
-    title: req.body.title,
-    cover: req.body.cover,
-    author: req.body.author
+    Name: req.body.Name,
+    Art: req.body.Art,
+    Year: req.body.Year
   }).then(function () {
     res.send("show Created");
   })["catch"](function () {
@@ -161,5 +161,5 @@ app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname + '/../build/index.html'));
 });
 app.listen(port, function () {
-  console.log("Example app listening on port ".concat(port));
+  console.log("Project2023 app listening on port ".concat(port));
 });

@@ -28,15 +28,15 @@ const mongoose = require('mongoose');
 main().catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect('mongodb+srv://admin:admin@martinscluster.w5rtkz0.mongodb.net/DB14?retryWrites=true&w=majority');
+  await mongoose.connect('mongodb+srv://jacktalbot:oQNEiYub1@cluster0.eojnzjj.mongodb.net/?retryWrites=true&w=majority');
 
   // use `await mongoose.connect('mongodb://talbotjack86:JtCNwhxCubT54pLO@127.0.0.1:27017/test');` if your database has auth enabled
 }
 
 const showSchema = new mongoose.Schema({
-  title:String,
-  cover:String,
-  author:String
+  Name:String,
+  Art:String,
+  Year:String
 })
 
 const showModel = mongoose.model('dfgdfgdfgdfg5r5645634fggh', showSchema);
@@ -61,9 +61,9 @@ app.post('/api/show', (req,res)=>{
     console.log(req.body);
 
     showModel.create({
-      title:req.body.title,
-      cover:req.body.cover,
-      author:req.body.author
+      Name:req.body.Name,
+      Art:req.body.Art,
+      Year:req.body.Year
     })
     .then(()=>{ res.send("show Created")})
     .catch(()=>{ res.send("show NOT Created")});
@@ -95,5 +95,5 @@ app.get('*', (req,res) =>{
   
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Project2023 app listening on port ${port}`)
 })

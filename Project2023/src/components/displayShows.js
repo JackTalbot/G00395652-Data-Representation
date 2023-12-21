@@ -41,6 +41,7 @@ function ReadShows() {
         return (
             <div>
                 <h2>Welcome, here is your list of added shows</h2>
+                <Shows myBooks={data} ReloadData={Reload}></Shows>
             </div>
         );
     

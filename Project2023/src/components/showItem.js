@@ -23,6 +23,18 @@ function ShowItem(props) {
                 </Card.Body>
                 {/* adds edit button */}
                 <Link to={'/edit/'+props.myShow._id} className='btn btn-primary'>Edit</Link>
+
+                <Button variant='danger' onClick={
+                    (e)=>{
+                        e.preventDefault();
+
+                       axios.delete('http://localhost:4000/api/show/'+props.myShow._id)
+                        .then((res)=>{
+                            let reload = props.Reload();
+                        })
+                        .catch();
+                    }
+                }>Delete</Button>
             </Card>
         </div>
     )
