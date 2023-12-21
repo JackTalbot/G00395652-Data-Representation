@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 export default function EditShows() {
+    //Variables
     let {id} = useParams();
 
     const [name, setName] = useState('');
@@ -10,7 +11,7 @@ export default function EditShows() {
     const [year, setYear] = useState('');
 
     const navigate = useNavigate();
-
+    //Getting the data from the server
     useEffect(
         ()=>{
 
@@ -27,7 +28,7 @@ export default function EditShows() {
             );
         },[]
     );
-
+    //Sending the data to the server
     const handleSubmit = (e)=>{
         e.preventDefault();
 
@@ -36,7 +37,7 @@ export default function EditShows() {
             art:art,
             year:year
         }
-
+        
         axios.put('http://localhost:4000/api/show/'+id, show)
         .then((res)=>{
             navigate('/readShows');
@@ -46,7 +47,7 @@ export default function EditShows() {
                 console.log(error)
             });
     }
-
+    //Displaying the data to the user
     return (
         <div>
             <h2>Hello from EditShows component!</h2>

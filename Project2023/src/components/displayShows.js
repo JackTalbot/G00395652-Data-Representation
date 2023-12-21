@@ -3,12 +3,12 @@ import axios from 'axios';
 import Shows from './shows';
 
 function ReadShows() {
-
+    //Variables
     const [data, setData] = useState([]);
 
     useEffect(
       ()=>{
-          
+          //Getting the data from the server
           axios.get('http://localhost:4000/api/shows')
           .then(
               (response)=>{
@@ -23,7 +23,7 @@ function ReadShows() {
   
       }, []
     );
-  
+    //Displaying the data to the user
     const Reload = (e)=>{
       axios.get('http://localhost:4000/api/shows')
           .then(
@@ -37,7 +37,7 @@ function ReadShows() {
               }
           )
     }
-    
+        //Information the User will always see
         return (
             <div>
                 <h2>Welcome, here is your list of added shows</h2>

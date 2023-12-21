@@ -23,7 +23,6 @@ function ShowItem(props) {
             </Card>
         </div>
     )
-
 }
 
 export default ShowItem;
